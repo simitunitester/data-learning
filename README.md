@@ -55,3 +55,52 @@ FROM table_1;
 
 - Database servers store and manage databases, while database clients connect to servers and send queries.
 - Multiple users can connect simultaneously to the same database server through various types of clients including web applications and desktop software.
+
+### SQL Query Basics
+
+- A SQL query retrieves data from a database using the `SELECT` and `FROM` keywords.
+
+```sql
+SELECT column_1,
+       column_2
+FROM table_name;
+```
+
+- `SELECT` specifies which columns to retrieve (`*` for all columns).
+- `FROM` specifies which table to query.
+- `;` is the statement terminator that marks the end of a query.
+
+### Data Aggregation
+
+- Data aggregation is the operation of summarizing data by applying functions (like SUM, AVG, COUNT) to columns to produce single values.
+- Data aggregation reveals insights and patterns that are difficult to recognize by examining raw data alone.
+
+### Summarizing Data in SQL
+
+- To apply summary operations in SQL, use aggregate functions within a SELECT statement:
+
+```sql
+SELECT COUNT(column_1) AS metric_1,
+       SUM(column_2)   AS metric_2
+FROM table_name;
+```
+
+- The `AS` keyword assigns a temporary name (alias) to a column, making output more readable.
+- Calculate multiple summary values in one query by listing aggregate functions separated by commas.
+- You can also calculate just one summary value by using a single aggregate function.
+
+### Summary Operations
+
+- `SUM()`: Calculates the total of all values in a column
+- `AVG()`: Calculates the average value in a column
+- `MIN()`: Finds the minimum value in a column
+- `MAX()`: Finds the maximum value in a column
+- `COUNT()`: Counts the number of rows or values
+- `COUNT(DISTINCT column)`: Counts the number of unique values
+
+### Design Framework
+
+- Thinking through your query before writing code is one of the most effective habits of successful data analysts.
+- To effectively design a data aggregation operation, answer two key questions:
+  1. Which column do we wish to summarize? Select the column containing values relevant to your question.
+  2. Which summary operation do we wish to apply? Choose the appropriate operation based on the insight you need.
